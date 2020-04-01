@@ -19,10 +19,4 @@
 - Ruby: https://ruby-doc.org/ - http://rubytutorial.wikidot.com/
 - Rspec: http://rspec.info/documentation/
 
-## Exercise
 
-- Navigate to https://www.amazon.com/
-- Search “iphone case”.
-- Filter for “Polycarbonate”.
-- Order by price higher to lower.
-- Check that items are ordered by price.
