@@ -1,1 +1,1 @@
-# selenium-bootstrap-node
+# selenium-bootstrap-ruby
