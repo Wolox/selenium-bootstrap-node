@@ -1,0 +1,16 @@
+GlobalVars:
+  AllowedVariables:
+    - $driver
+
+Metrics/LineLength:
+  Max: 100
+
+AllCops:
+  Exclude:
+    - 'features/support/env.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
