@@ -6,8 +6,6 @@ echo -e "Welcome to the QA Automation kickoff!\n"
 read -p "Please copy your Github repository: " github_repo_link
 echo "Cloning repository..."
 gitclonecd $github_repo_link
-git config --local user.name "ffasitella"
-git config --local user.email "federico.fasitella@wolox.com.ar"
 echo "Installing required gems..."
 echo "source 'https://rubygems.org'" >> Gemfile
 echo "gem 'rails'" >> Gemfile
@@ -18,7 +16,7 @@ bundle install --quiet
 echo "Initializing Cucumber..."
 bundle exec cucumber --init > /dev/null
 echo "Committing changes to Github..."
-git checkout -q -b kickoff > /dev/null
+git checkout -q -b kickoff
 git add .
 git commit -q -m "Kickoff"
 git push origin HEAD
