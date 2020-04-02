@@ -4,6 +4,12 @@
 - Add in config profile file ( .zshrc, .bashrc), `export PATH="$PATH:$HOME/.rvm/bin"` and `source ~/.rvm/scripts/rvm`.
 - Move to project root and run `gem install bundler`.
 
+To run the project, follow these steps:
+
+- Clone this repository
+- Move to project root and run `bundle install`
+- Run `bundle exec cucumber`
+
 ## Generals
 
 - In the folder `features/step_definitions` create files who define steps for each feature.
@@ -19,4 +25,11 @@
 - Ruby: https://ruby-doc.org/ - http://rubytutorial.wikidot.com/
 - Rspec: http://rspec.info/documentation/
 
+## Contributing
 
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Run the tests (`npm test`)
+4. Commit your changes (`git commit -am 'Add some feature'`)
+5. Push to the branch (`git push origin my-new-feature`)
+6. Create new Pull Request
