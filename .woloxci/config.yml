@@ -1,0 +1,14 @@
+config:
+  dockerfile: .woloxci/Dockerfile
+  project_name: selenium-bootstrap-ruby
+
+steps:
+  analysis:
+    - bundle exec rubocop features services views
+  testing:
+    - bundle exec cucumber
+ 
+environment:
+  RAILS_ENV: test
+  GIT_COMMITTER_NAME: a
+  GIT_COMMITTER_EMAIL: b
