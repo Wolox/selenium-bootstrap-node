@@ -8,7 +8,7 @@ require 'dotenv/load'
 $browser_type = ENV.fetch('BROWSER','chrome')
 $platform = ENV.fetch('PLATFORM','desktop')
 $app_path = ENV.fetch('APP_PATH', 'app_path')
-$is_headless = ENV.fetch('HEADLESS','no')
+$is_headless = ENV.fetch('HEADLESS','false')
 
 # check for valid parameters
 validate_parameters $platform, $browser_type, $app_path
@@ -41,11 +41,14 @@ else # else create driver instance for desktop browser
   begin
     chromedriver_path = File.join(File.absolute_path(''),"chromedriver")
     Selenium::WebDriver::Chrome.driver_path = chromedriver_path
-    if $is_headless == 'yes'
-      $headless = Headless.new
-      $headless.start
+    options = Selenium::WebDriver::Chrome::Options.new(args: ['--incognito', '--disable-popup-blocking', 'binary_location=/var/task/bin/headless-chromium'], prefs: { "disable-popup-blocking":"true"})
+    if $is_headless == 'true'
+      options.add_argument('--headless')
+      options.add_argument('--disable-gpu')
+      options.add_argument('--disable-dev-shm-usage')
+      options.add_argument('--no-sandbox')
     end
-    $driver = Selenium::WebDriver.for(:chrome, args:['--incognito','--disable-popup-blocking','binary_location=/var/task/bin/headless-chromium'],prefs: { "disable-popup-blocking":"true"})
+    $driver = Selenium::WebDriver.for(:chrome, options: options)
     $driver.manage.window.maximize
   rescue Exception => e
     puts e.message

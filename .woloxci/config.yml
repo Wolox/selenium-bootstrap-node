@@ -9,6 +9,7 @@ steps:
     - bundle exec cucumber
  
 environment:
+  HEADLESS: true
   RAILS_ENV: test
   GIT_COMMITTER_NAME: a
   GIT_COMMITTER_EMAIL: b
