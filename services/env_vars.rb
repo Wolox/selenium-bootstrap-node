@@ -5,7 +5,8 @@ Dotenv.load
 module EnvVars
   DEFAULTS = {
     'BROWSER': 'chrome',
-    'PLATFORM': 'desktop'
+    'PLATFORM': 'desktop',
+    'APP_PATH': 'www.google.com'
   }.freeze
   def get_env(var)
     env_var = ENV.fetch(var.upcase, DEFAULTS[:"#{var.upcase}"])
