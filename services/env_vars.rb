@@ -1,6 +1,4 @@
-require 'dotenv'
-
-Dotenv.load
+require 'dotenv/load'
 
 module EnvVars
   DEFAULTS = {
