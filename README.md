@@ -12,12 +12,19 @@ To run the project, follow these steps:
 
 ## Generals
 
-- In the folder `features/step_definitions` create files who define steps for each feature.
-- In file `env.rb` define environment vars.
-- In file `hooks.rb` define actions after/before each feature/scenario/tag.
-- In file `helpers.rb` create modules and methods that you think can be used for many steps/features.
-- Create files `.feature` in folder `features` and use descriptive names.
-- Run rubocop with `bundle exec rubocop features`
+The automation projects use a feature -> step_definition -> views structure.
+- Create `.feature` files in the `/features` folder to describe the scenario that is being tested with its steps.
+- Create `.rb` files in the `/features/step_definition` folder to describe the process within each step.
+- Create `.rb` files in the `views` folder to define modules and methods to provide the step_definition.
+
+The `env.rb` file does the set up for the proyect.
+- It loads all the files and modules.
+- It creates the driver instance, which is needed to test the application.
+
+In the `hooks.rb` file you can define actions to be executed after/before each feature/scenario/tag.
+
+While the `views` files are meant to be specific for each feature, you can define more generic methods to use all across the apllication in the `helpers.rb` file.
+
 
 ## Documentation
 
