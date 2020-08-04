@@ -15,6 +15,7 @@ echo "gem 'selenium-webdriver'" >> Gemfile
 bundle install --quiet
 echo "Initializing Cucumber..."
 bundle exec cucumber --init > /dev/null
+curl -s https://raw.githubusercontent.com/Wolox/selenium-bootstrap-ruby/master/features/support/env.rb >> ./features/support/env.rb
 echo "Committing changes to Github..."
 git checkout -q -b kickoff
 git add .
